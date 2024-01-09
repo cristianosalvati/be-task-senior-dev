@@ -1,0 +1,307 @@
+{
+	"info": {
+		"_postman_id": "16811e8d-371b-4812-b23d-79ae8a1e4762",
+		"name": "Contract Testing",
+		"description": "# About this collection\n\nThis collection helps you set up contract tests to ensure that two separate systems are compatible and can communicate with one another.\n\n## **Using the collection**\n\n**Step 1:** Send the sample requests and view the response and test results.\n\n**Step 2:** Replace the sample request URLs with your desired API endpoints.\n\n**Step 3:** Customize the tests in the \"Tests\" tab if needed. Don't forget to save your changes.\n\n### Resources\n\n[Scripting in Postman](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/)\n\n[Test script examples](https://learning.postman.com/docs/writing-scripts/script-references/test-examples/)\n\n[Postman Sandbox API reference](https://learning.postman.com/docs/sending-requests/grpc/postman-sandbox-api/#writing-assertions)\n\n[Using the Collection Runner](https://learning.postman.com/docs/collections/running-collections/intro-to-collection-runs/)\n\n[  \n](https://postman.postman.co/documentation/24552533-5bead607-0197-4e1d-87d4-3160bc7631c1?entity=&branch=&version=)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1358877"
+	},
+	"item": [
+		{
+			"name": "amaris-task-be",
+			"item": [
+				{
+					"name": "/api/employees/find-all",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/tasks/api/employees/find-all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tasks",
+								"api",
+								"employees",
+								"find-all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/employees/delete/{employeeId}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/tasks/api/employees/delete/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tasks",
+								"api",
+								"employees",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/employees/create",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"id\": 5,\r\n            \"firstName\": \"John\",\r\n            \"lastName\": \"Doe\",\r\n            \"role\": \"Developer\",\r\n            \"email\": \"john.doe@example.com\",\r\n            \"dateInsert\": 1704756106754,\r\n            \"dateDelete\": null,\r\n            \"dateUpdate\": null,\r\n            \"userUpdate\": null\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/tasks/api/employees/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tasks",
+								"api",
+								"employees",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/tasks/find-by",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 4,\r\n \"taskStatus\": \"PENDING\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/tasks/api/tasks/find-by",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tasks",
+								"api",
+								"tasks",
+								"find-by"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/tasks/create",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"id\": 0,\r\n            \"title\": \"Task 5\",\r\n            \"description\": \"Description for Task 5\",\r\n            \"taskStatus\": \"PENDING\",\r\n            \"dueDate\": 1701385200000,\r\n            \"manager_id\": 2,\r\n            \"dateInsert\": null,\r\n            \"dateDelete\": null,\r\n            \"dateUpdate\": null,\r\n            \"userUpdate\": \"admin\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/tasks/api/tasks/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tasks",
+								"api",
+								"tasks",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/tasks/delete/{taskId}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"id\": 0,\r\n            \"title\": \"Task 5\",\r\n            \"description\": \"Description for Task 5\",\r\n            \"taskStatus\": \"PENDING\",\r\n            \"dueDate\": 1701385200000,\r\n            \"manager_id\": 2,\r\n            \"dateInsert\": null,\r\n            \"dateDelete\": null,\r\n            \"dateUpdate\": null,\r\n            \"userUpdate\": \"admin\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/tasks/api/tasks/delete/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tasks",
+								"api",
+								"tasks",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/tasks/assign/{taskId}/to/{employeeId}",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"id\": 0,\r\n            \"title\": \"Task 5\",\r\n            \"description\": \"Description for Task 5\",\r\n            \"taskStatus\": \"PENDING\",\r\n            \"dueDate\": 1701385200000,\r\n            \"manager_id\": 2,\r\n            \"dateInsert\": null,\r\n            \"dateDelete\": null,\r\n            \"dateUpdate\": null,\r\n            \"userUpdate\": \"admin\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/tasks/api/tasks/assign/2/to/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tasks",
+								"api",
+								"tasks",
+								"assign",
+								"2",
+								"to",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/tasks/unassign/{taskId}/from/{employeeId}",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"id\": 0,\r\n            \"title\": \"Task 5\",\r\n            \"description\": \"Description for Task 5\",\r\n            \"taskStatus\": \"PENDING\",\r\n            \"dueDate\": 1701385200000,\r\n            \"manager_id\": 2,\r\n            \"dateInsert\": null,\r\n            \"dateDelete\": null,\r\n            \"dateUpdate\": null,\r\n            \"userUpdate\": \"admin\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/tasks/api/tasks/unassign/2/from/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tasks",
+								"api",
+								"tasks",
+								"unassign",
+								"2",
+								"from",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/tasks/due-date/{taskId}",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "newDueDate",
+									"value": "1704763983756",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/tasks/api/tasks/due-date/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tasks",
+								"api",
+								"tasks",
+								"due-date",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
