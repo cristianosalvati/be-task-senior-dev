@@ -72,7 +72,7 @@ public class TaskController {
 		}	
     }
     
-    @PostMapping("/find-by")
+    @PostMapping("/find")
     public ResponseEntity<ResponseDto<?>> findTaskByFilter(
     			@RequestBody(required=true) SearchFilterDto dto){
     	try {

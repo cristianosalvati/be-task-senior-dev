@@ -1,6 +1,7 @@
 package com.amaris.task.data.domain.dto;
 
 import java.util.Date;
+import java.util.List;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -23,4 +24,17 @@ public class TaskDto extends AbstractDto{
 	private Date dateDelete;
 	private Date dateUpdate;
 	private String userUpdate;
+	private List<EmployeeDto> employees;
+	
+	public boolean equals(Object o) {
+	    if (this == o) {
+	        return true;
+	    }
+	    if (o == null || getClass() != o.getClass()) {
+	        return false;
+	    }
+	    TaskDto other = (TaskDto) o;
+	    return id != null && other.id != null && id.equals(other.id);
+	}
+
 }
