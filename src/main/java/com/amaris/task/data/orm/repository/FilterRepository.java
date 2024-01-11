@@ -34,7 +34,7 @@ import com.amaris.task.data.orm.entity.Task;
  * @author  salvati.cristiano_am
  * 
  * A repository with a custom JPA implementation to filter and retrieve 
- * employers related to a task.   
+ * employers related to a task with some optional parameter selection   
  */
 
 @Repository	

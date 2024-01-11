@@ -2,7 +2,7 @@ package com.amaris.task.data.domain.dto;
 
 import java.util.Date;
 import java.util.List;
-
+import com.amaris.task.common.util.FormatUtil;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -37,4 +37,10 @@ public class TaskDto extends AbstractDto{
 	    return id != null && other.id != null && id.equals(other.id);
 	}
 
+	public String getDateInsertS() {
+		return FormatUtil.simpleItDateFormatter.format(dateInsert);
+	}
+	public String getDueDateS() {
+		return FormatUtil.simpleItDateFormatter.format(dueDate);
+	}
 }
