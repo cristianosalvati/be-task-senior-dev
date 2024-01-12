@@ -128,7 +128,7 @@ public class TaskController {
     @PostMapping("/due-date/{taskId}")
     public ResponseEntity<ResponseDto<?>> updateTaskDueDate(
             @PathVariable Long taskId,
-            @RequestParam Date newDueDate) {
+            @RequestParam String newDueDate) {
     	try {
     		ResponseDto<TaskDto> response = new ResponseDto<TaskDto>();
     		response.setStatus(ResponseDtoStatus.SUCCESS);

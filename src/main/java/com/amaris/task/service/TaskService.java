@@ -12,6 +12,7 @@ import com.amaris.task.common.exception.ModelProcessingException;
 import com.amaris.task.common.exception.RepositoryException;
 import com.amaris.task.common.exception.ServiceException;
 import com.amaris.task.common.util.Constants;
+import com.amaris.task.common.util.FormatUtil;
 import com.amaris.task.data.domain.dto.EmployeeTaskDto;
 import com.amaris.task.data.domain.dto.SearchFilterDto;
 import com.amaris.task.data.domain.dto.TaskDto;
@@ -125,10 +126,15 @@ public class TaskService {
     }
     
     @Transactional
-	public TaskDto updateTaskDueDate(Long taskId, Date newDueDate) throws ServiceException, ModelProcessingException {
+	public TaskDto updateTaskDueDate(Long taskId, String newDueDateS) throws ServiceException, ModelProcessingException {
     	 Task task = taskRepository.findById(taskId).orElse(null);
     	 if (task != null) {
-    		 task.setDueDate(newDueDate);
+    		 try {
+    			 Date newDueDate = FormatUtil.simpleDateFormatter.parse(newDueDateS);
+        		 task.setDueDate(newDueDate);
+    		 }catch(Throwable t) {
+    			 throw new ServiceException(t.getMessage());
+    		 }
     		 task.setDateUpdate(new Date());
     		 taskRepository.save(task);
     		 

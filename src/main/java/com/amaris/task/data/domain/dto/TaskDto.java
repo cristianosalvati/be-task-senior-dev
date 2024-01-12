@@ -38,9 +38,9 @@ public class TaskDto extends AbstractDto{
 	}
 
 	public String getDateInsertS() {
-		return FormatUtil.simpleItDateFormatter.format(dateInsert);
+		return FormatUtil.simpleDateFormatter.format(dateInsert);
 	}
 	public String getDueDateS() {
-		return FormatUtil.simpleItDateFormatter.format(dueDate);
+		return FormatUtil.simpleDateFormatter.format(dueDate);
 	}
 }
